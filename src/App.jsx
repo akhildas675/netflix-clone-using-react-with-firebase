@@ -17,11 +17,11 @@ function App() {
     onAuthStateChanged(auth,async (user)=>{
       if(user){
         console.log("Logged In");
-        navigate('/')
+        navigate('/home')
         
       }else{
         console.log("Logged Out");
-        navigate('/login')
+        navigate('/')
         
       }
     })
@@ -31,8 +31,8 @@ function App() {
     <div>
       <ToastContainer theme="dark"/>
       <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/login" element={<Login/>}/>
+        <Route path="/home" element={<Home/>}/>
+        <Route path="/" element={<Login/>}/>
         <Route path="/player/:id" element={<Player/>}/>
       </Routes>
     </div>
